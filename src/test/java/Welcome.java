@@ -15,7 +15,8 @@ public class Welcome {
 
         //Using get() method to open a webpage
         driver.get("http://artoftesting.com");
-        driver.get("http://weblogic.com");
+
+        driver.get("http://indigo.com");
         //Closing the browser
 
 
