@@ -15,7 +15,7 @@ public class Welcome {
 
         //Using get() method to open a webpage
         driver.get("http://artoftesting.com");
-      
+        System.out.println("Welcome to seleium");
 
         //Closing the browser
 
