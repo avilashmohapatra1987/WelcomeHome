@@ -25,7 +25,7 @@
     <distributionManagement>
         <repository>
             <id>releases</id>
-            <url>https://github.com/avilashmohapatra1987/WelcomeHome.git</url>
+            <url>C:\Deployfiles</url>
         </repository>
 
     </distributionManagement>
