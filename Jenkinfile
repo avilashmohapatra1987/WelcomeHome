@@ -18,7 +18,7 @@ pipeline {
             steps {
                 echo "Deploying the tests"
 				 bat 'mvn deploy'
-				 publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: '', reportFiles: 'index.html', reportName: 'Test Report', reportTitles: ''])
+				 publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: '', reportFiles: 'index.htm', reportName: 'Test Report', reportTitles: ''])
 				 cucumber failedFeaturesNumber: -1, failedScenariosNumber: -1, failedStepsNumber: -1, fileIncludePattern: '**/*.json', pendingStepsNumber: -1, skippedStepsNumber: -1, sortingMethod: 'ALPHABETICAL', undefinedStepsNumber: -1
 				}
         }
