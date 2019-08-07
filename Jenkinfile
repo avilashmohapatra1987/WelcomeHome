@@ -18,8 +18,8 @@ pipeline {
             steps {
                 echo "Deploying the tests"
 				 bat 'mvn deploy'
-				 publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'Coverage', reportFiles: 'index.html', reportName: 'Test Report', reportTitles: ''])
-            }
+				 publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: '', reportFiles: 'index.html', reportName: 'Test Report', reportTitles: ''])
+				}
         }
     }
 }
