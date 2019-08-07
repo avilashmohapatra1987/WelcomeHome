@@ -27,10 +27,7 @@
             <id>releases</id>
             <url>https://github.com/avilashmohapatra1987/WelcomeHome.git</url>
         </repository>
-        <snapshotRepository>
-            <id>snapshots</id>
-            <url>https://github.com/avilashmohapatra1987/WelcomeHome.git</url>
-        </snapshotRepository>
+
     </distributionManagement>
 
 </project>
