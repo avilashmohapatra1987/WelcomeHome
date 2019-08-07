@@ -2,24 +2,23 @@ pipeline {
     agent any
     stages {
 
-        stage('Compile') {
+        stage('build') {
             steps {
                 echo "Building the repository"
-				 bat 'mvn clean compile'
+				bat 'mvn clean install -B -f MyTest/pom.xml'
             }
         }
         stage('Test') {
             steps {
-                echo "Testing the tests"
-				bat 'mvn test'
+                publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: '', reportFiles: 'index.htm', reportName: 'Test Report', reportTitles: ''])
+                cucumber failedFeaturesNumber: -1, failedScenariosNumber: -1, failedStepsNumber: -1, fileIncludePattern: '**/*.json', pendingStepsNumber: -1, skippedStepsNumber: -1, sortingMethod: 'ALPHABETICAL', undefinedStepsNumber: -1
+
             }
 			}
 		stage('Deploy') {
             steps {
                 echo "Deploying the tests"
 				 bat 'mvn deploy'
-				 publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: '', reportFiles: 'index.htm', reportName: 'Test Report', reportTitles: ''])
-				 cucumber failedFeaturesNumber: -1, failedScenariosNumber: -1, failedStepsNumber: -1, fileIncludePattern: '**/*.json', pendingStepsNumber: -1, skippedStepsNumber: -1, sortingMethod: 'ALPHABETICAL', undefinedStepsNumber: -1
 				}
         }
     }
