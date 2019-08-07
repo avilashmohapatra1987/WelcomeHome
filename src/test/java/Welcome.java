@@ -5,21 +5,25 @@ import org.testng.annotations.Test;
 
 public class Welcome {
 
-   @Test
+    @Test(priority = 1)
 
-public void Welcome(){
+    public void Welcome() {
         //Setting webdriver.gecko.driver property
         System.setProperty("webdriver.chrome.driver", "C:\\TR_Store_Latest\\MyTest\\src\\main\\resources\\chromedriver3.exe");
+    }
 
+    @Test(priority = 2)
+    public void Driver() {
         //Instantiating driver object and launching browser
-        WebDriver driver=new ChromeDriver();
-
+        WebDriver driver = new ChromeDriver();
         //Using get() method to open a webpage
         driver.get("http://artoftesting.com");
-        System.out.println("Welcome to selenium");
+
 
         //Closing the browser
         driver.close();
 
     }
 }
+
+
